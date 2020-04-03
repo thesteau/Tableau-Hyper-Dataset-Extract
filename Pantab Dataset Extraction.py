@@ -10,8 +10,8 @@ def script_path():
     """ Edit these paths accordingly - this can be used for debugging and testing purposes.
         Rather than setting this as a global variable, this is set as a local variable for further modular uses
     """
-    script_file_path = r'REDACTED FILE PATH'
-    return script_file_path
+    SCRIPT_FILE_PATH = r'REDACTED FILE PATH'
+    return SCRIPT_FILE_PATH
 
 def pathing_library_mojo(some_file, file_convert='csv'):
     """ Parse the file string and extract all necessawry elements to breakdown and conert a file to a desired format name.
@@ -45,7 +45,12 @@ def pathing_library_mojo(some_file, file_convert='csv'):
 
 def path_choice():
     """ Output the files for conversion uses
-
+    
+        Returns:
+            hyper_file:
+                Tableau Dataset path
+            new_export:
+                Export dataset path
     """
     monologue()
     while True:
