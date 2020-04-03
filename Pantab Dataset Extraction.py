@@ -1,9 +1,10 @@
 # Script by Steven Au
 # Special thanks to the Pantab author!
-import pantab as pt
-import pandas as pd
 import pathlib as pl
 import platform as pf
+
+import pantab as pt
+import pandas as pd
 
 def script_path():
     # a decorator is possible here - for future refactoring
