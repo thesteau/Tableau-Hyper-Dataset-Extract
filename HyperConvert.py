@@ -97,7 +97,7 @@ class HyperConvert:
         hyper_file = the_file
         new_export = new_filename
 
-        return hyper_file, new_export
+        return (hyper_file, new_export)
 
     def hyper_to_csv(self, hyper_file, csv_export):
         """ Primary method to convert a hyperfile's path to the CSV file's path.
