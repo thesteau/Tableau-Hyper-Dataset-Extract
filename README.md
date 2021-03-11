@@ -1,2 +1,19 @@
 # Tableau-Hyper-Dataset-Extract
-Using Pantab, extract the .hyper file into a .csv file via a drag and drop (via terminal) of path (or inputted manually)
+
+Requires:
+Python 3.7 or later
+Pandas 1.2.3
+Pantab 1.0.1
+
+Converts a hyper data file into csv through python.
+
+Please note: You must use the exact path.
+
+To use this package as a module:
+
+import HyperConvert as hc
+
+hyper = tableau_data_path.hyper
+dest = destination_path.csv
+
+hc.hyper_to_csv(hyper, dest)
