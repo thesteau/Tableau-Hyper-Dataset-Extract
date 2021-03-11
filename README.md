@@ -26,4 +26,4 @@ hc.hyper_to_csv(hyper, dest)
 ```
 
 ## Acknowledgements
-The original developer of the Pantab module
+Special thanks to the original developer of the Pantab module!
