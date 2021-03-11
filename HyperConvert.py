@@ -6,6 +6,19 @@ import platform as pf
 import pantab as pt
 import pandas as pd
 
+
+def monologue(func):
+    """ Monologue Decorator"""
+
+    def wrapped(self):
+        """"""
+        print("You can choose to drag and drop a file path here!")
+        print("Otherwise, if the paths are hard coded into this script, ")
+        print("then do not type anything and simply just press enter")
+        func(self)
+
+    return wrapped
+
 class HyperConvert:
     """"""
 
@@ -55,6 +68,7 @@ class HyperConvert:
 
         return orig_file_path, new_export
 
+    @monologue
     def path_choice(self):
         """ Output the files for conversion uses
 
@@ -104,11 +118,7 @@ class HyperConvert:
             df = pandas_df
         return df.to_csv(csv_export, index=None)
 
-    def _monologue(self):
-        """ Monologue Decorator"""
-        print("You can choose to drag and drop a file path here!")
-        print("Otherwise, if the paths are hard coded into this script, ")
-        print("then do not type anything and simply just press enter")
+
 
 
 
@@ -119,6 +129,7 @@ def script_path():
     """
     SCRIPT_FILE_PATH = r'REDACTED FILE PATH'
     return SCRIPT_FILE_PATH
+
 
 def pathing_library_mojo(some_file, file_convert='csv'):
     """ Parse the file string and extract all necessawry elements to breakdown and conert a file to a desired format name.
@@ -179,6 +190,7 @@ def path_choice():
 
     return hyper_file, new_export
 
+
 def hyper_to_csv(hyper_file, csv_export):
     """ Conversion from tableauhyperapi table "Dictionary" to a Pandas Dataframe
         Parameters: 
@@ -197,13 +209,13 @@ def hyper_to_csv(hyper_file, csv_export):
     hyperdb = pt.frames_from_hyper(hyper_file)
     for key, pandas_df in hyperdb.items():
         df = pandas_df
-    return df.to_csv(csv_export, index=None) 
+    return df.to_csv(csv_export, index=None)
+
 
 def monologue():
     print("You can choose to drag and drop a file path here!")
     print("Otherwise, if the paths are hard coded into this script, ")
     print("then do not type anything and simply just press enter")
-
 
 
 if __name__ == "__main__":
