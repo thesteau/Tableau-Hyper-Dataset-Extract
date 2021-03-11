@@ -25,5 +25,11 @@ dest = destination_path.csv      # The destination path for the file with the .c
 hc.hyper_to_csv(hyper, dest)
 ```
 
+## Author
+Steven Au
+
+## License
+See the LICENSE.md for details
+
 ## Acknowledgements
 Special thanks to the original developer of the Pantab module!
