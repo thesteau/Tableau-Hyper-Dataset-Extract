@@ -19,8 +19,8 @@ However, you may run this script for the specific method as shown below.
 ```python
 import HyperConvert as hc
 
-hyper = tableau_data_path.hyper
-dest = destination_path.csv
+hyper = tableau_data_path.hyper  # The exact path of the original file with the .hyper extension
+dest = destination_path.csv      # The destination path for the file with the .csv extension
 
 hc.hyper_to_csv(hyper, dest)
 ```
