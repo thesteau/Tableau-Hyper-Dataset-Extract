@@ -15,7 +15,7 @@ def monologue(func):
         print("You can choose to drag and drop a file path here!")
         print("Otherwise, if the paths are hard coded into this script, ")
         print("then do not type anything and simply just press enter")
-        func(*args, **kwargs)
+        return func(*args, **kwargs)
     return wrapped
 
 
