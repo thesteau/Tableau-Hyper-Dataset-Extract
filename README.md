@@ -15,7 +15,7 @@ Please note: You must use the exact path.
 
 ## Getting Started
 
-```
+```python
 import HyperConvert as hc
 
 hyper = tableau_data_path.hyper
