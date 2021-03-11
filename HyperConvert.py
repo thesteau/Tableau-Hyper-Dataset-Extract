@@ -9,9 +9,10 @@ import pandas as pd
 class HyperConvert:
     """"""
 
-    def __init__(self, script_path=None):
+    def __init__(self, script_path=None, file_type='csv'):
         """"""
         self._script_path = script_path
+        self._file_type = file_type
 
     def set_script_path(self, script_path):
         """ Sets the script path."""
@@ -21,7 +22,11 @@ class HyperConvert:
         """ Returns the script path."""
         return self._script_path
 
-    def library_pathing(self, some_file, file_convert='csv'):
+    def set_file_type(self, file_type):
+        """"""
+        self._file_type = file_type
+
+    def library_pathing(self, some_file):
         """ Parse the file string and extract all necessawry elements to breakdown and conert a file to a desired format name.
             Note: This function's purposes is only taking an input file and return the original path and newly converted file path
             Parameters:
@@ -40,7 +45,7 @@ class HyperConvert:
         """
         orig_file_path = pl.Path(some_file)
         parent_path = str(orig_file_path.parent)
-        new_filename = orig_file_path.stem + '.' + file_convert
+        new_filename = orig_file_path.stem + '.' + self._file_type
 
         directory_pathing = '/'
         if pf.system().lower() == 'windows':
@@ -70,7 +75,7 @@ class HyperConvert:
         if len(dragged_file) != 0:
             evaluate_file_path = dragged_file
         else:
-            evaluate_file_path = script_path()
+            evaluate_file_path = self._script_path
 
         the_file, new_filename = pathing_library_mojo(evaluate_file_path)
 
@@ -199,9 +204,8 @@ def monologue():
     print("Otherwise, if the paths are hard coded into this script, ")
     print("then do not type anything and simply just press enter")
 
-def main():
-    hyper_file, csv_export = path_choice()
-    hyper_to_csv(hyper_file, csv_export)
+
 
 if __name__ == "__main__":
-    main()
+    hyper_file, csv_export = path_choice()
+    hyper_to_csv(hyper_file, csv_export)
