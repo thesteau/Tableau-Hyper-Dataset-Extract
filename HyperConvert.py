@@ -122,6 +122,7 @@ class HyperConvert:
 
 
 if __name__ == "__main__":
+    # If ran as a standalone.
     hc = HyperConvert()
     hyper, csv = hc.path_choice()
     hc.hyper_to_csv(hyper, csv)
