@@ -78,19 +78,19 @@ class HyperConvert:
                 new_export:
                     Export dataset path
         """
-        if self._script_path is None:
+        if self._script_path is not None:
             evaluate_file_path = self._script_path
 
         while True:
             try:
-                dragged_file = input("Press enter to use the file paths hard saved in this script\n> ")
+                dragged_file = input("Press enter to use the file path pre-set in this script\n> ")
+                if len(dragged_file) != 0:
+                    evaluate_file_path = dragged_file
+                    self.set_script_path(dragged_file)  # Set the variable to the manually inputted file path.
                 break
             except:
-                print("Unfortunately, an error occured. Perhaps you have quote marks. Delete those!")
+                print("Unfortunately, an error occurred. Perhaps you have quote marks. Delete those!")
                 continue
-
-        if len(dragged_file) != 0:
-            evaluate_file_path = dragged_file
 
         the_file, new_filename = self.library_pathing(evaluate_file_path)
 
@@ -100,7 +100,8 @@ class HyperConvert:
         return hyper_file, new_export
 
     def hyper_to_csv(self, hyper_file, csv_export):
-        """ Conversion from tableauhyperapi table "Dictionary" to a Pandas Dataframe
+        """ Primary method to convert a hyperfile's path to the CSV file's path.
+            Conversion from tableauhyperapi table "Dictionary" to a Pandas Dataframe
             Parameters:
                 hyper_file:
                     File path for the hyper file import
@@ -121,5 +122,5 @@ class HyperConvert:
 
 
 if __name__ == "__main__":
-    convert = HyperConvert()
-    convert.hyper_to_csv(convert.path_choice())
+    hc = HyperConvert()
+    hc.hyper_to_csv(hc.path_choice())
