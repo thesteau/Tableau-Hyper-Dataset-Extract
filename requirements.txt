@@ -1,0 +1,2 @@
+Pandas 1.2.3
+Pantab 1.0.1
